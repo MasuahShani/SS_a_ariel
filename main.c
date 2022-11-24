@@ -1,72 +1,53 @@
 #include <stdio.h>
 #include "NumClass.h"
 
-
 int main()
 {
-int x;
-int y;
-scanf("please give me 2 integers: %d %d",&x,&y);
-if(x<y)
-{
-    int temp=x;
-    x=y;
-    y=temp;
-}
-int  arrAmstrong [y-x+1], countA=0;
-int  arrPalindrom [y-x+1], countPa=0;
-int  arrPrime [y-x+1], countPr=0;
-int  arrStrong [y-x+1], countS=0;
-
-for(int i=0; i<=(x-y);i++)
-{
-    if(isArmstrong(y+i)==1)
+    int x, y;
+    while(scanf("%d%d", &x, &y) != 2)
     {
-       arrAmstrong[countA++]=(y+i);
+        char c;
+        scanf("%c", &c);
     }
-    if(isPalindrom(y+i)==1)
+
+    int big = y, small = x;
+    if(x > y)
     {
-        arrPalindrom[countPa++]=(y+i);
+        small = y;
+        big = x;
     }
-    if(isPrime(y+i)==1)
+    printf("The Armstrong numbers are:");
+    for(int i = small ; i <= big; i++ )
     {
-        arrPrime[countPr++]=(y+i);
+        if(isArmstrong(i) == 1)
+        {
+            printf(" %d", i);
+        }
     }
-    if(isStrong(y+i)==1)
+    printf("\nThe Palindromes are:");
+    for(int i = small ; i <= big; i++ )
     {
-        arrStrong[countS]=(y+i);
+        if(isPalindrome(i) == 1)
+        {
+            printf(" %d", i);
+        }
     }
-    
-}
-
-printf("The Armstrong numbers are:");
-for(int i=0; i<countA; i++)
-{
-    printf(" %d ",arrAmstrong[i] );
-}
-printf("/n");
-
-printf("The Palindromers are:");
-for(int i=0; i<countPa; i++)
-{
-    printf(" %d ",arrPalindrom[i] );
-}
-printf("/n");
-
-printf("The Prime numbers are:");
-for(int i=0; i<countPr; i++)
-{
-    printf(" %d ",arrPrime[i] );
-}
-printf("/n");
-
-printf("The Strong numbers are:");
-for(int i=0; i<countS; i++)
-{
-    printf(" %d ",arrStrong[i] );
-}
-
-
-return 0;
-
+    printf("\nThe Prime numbers are:");
+    for(int i = small ; i <= big; i++ )
+    {
+        if(isPrime(i) == 1)
+        {
+            printf(" %d", i);
+        }
+    }
+    printf("\nThe Strong numbers are:");
+    for(int i = small ; i <= big; i++ )
+    {
+        if(isStrong(i) == 1)
+        {
+            printf(" %d", i);
+        }
+    }
+    printf("\n");
+    return 0;
 }

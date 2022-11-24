@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "NumClass.h"
 
-int isPalindrom( int num)
+int isPalindrome( int num)
 {
     if(num<0)
     {

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "NumClass.h"
 
-int isPalindromInside(int num, int size)
+int isPalindromeInside(int num, int size)
 {
     if(num==0 || size==1)
     {
@@ -12,13 +12,13 @@ int isPalindromInside(int num, int size)
     {
         int newNum=num-((num/size)*size)-(num%10);
         newNum=newNum/10;
-        return isPalindromInside(newNum,size/100);
+        return isPalindromeInside(newNum,size/100);
     }
     return 0;
     
 
 }
-int isPalindrom(int num)
+int isPalindrome(int num)
 {
     if(num<0)
     {
@@ -33,7 +33,7 @@ int isPalindrom(int num)
         temp=temp/10;
 
     }
-    return isPalindromInside(num,size);
+    return isPalindromeInside(num,size);
     
 }
 
