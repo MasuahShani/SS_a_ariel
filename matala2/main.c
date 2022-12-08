@@ -47,7 +47,7 @@ int main()
             scanf("%f %f", &i, &j);
 
         int response=(int)short_path(i,j,arr);
-        printf("%d \n", response);
+        printf("%d\n", response);
 
         }
 
