@@ -31,11 +31,11 @@ int main()
         int response=is_exists(i,j,arr);
         if(response==1)
         {
-            printf("true");
+            printf("true\n");
         }
         else
         {
-            printf("false");
+            printf("false\n");
         }
         
            
@@ -46,8 +46,8 @@ int main()
             //printf("please enter i and j");
             scanf("%f %f", &i, &j);
 
-        float response=short_path(i,j,arr);
-        printf("%f", response);
+        int response=(int)short_path(i,j,arr);
+        printf("%d \n", response);
 
         }
 
