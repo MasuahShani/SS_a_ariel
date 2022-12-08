@@ -5,7 +5,7 @@
 float matrix(float *addr)
 {
     float *end=addr+100;
-    float val;
+    float val=0;
 
      while(addr<end)
         {
@@ -69,7 +69,7 @@ float short_path(float i,float j, float arr [10][10])
     }
 
 
-    float new_arr[10][10] ={};
+    float new_arr[10][10] ={0};
     for(int x=0; x<10; x++)
     {
         for(int y=0; y<10; y++)
