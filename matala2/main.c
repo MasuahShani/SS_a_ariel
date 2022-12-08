@@ -7,7 +7,7 @@ int main()
 {
     float i=0;
     float j=0;
-    float arr [10][10]={};
+    float arr [10][10]={0};
     char ans='D';
 
     //printf("please enter a char (A-D)");
