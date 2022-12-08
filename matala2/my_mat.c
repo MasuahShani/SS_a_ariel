@@ -21,7 +21,7 @@ float matrix(float *addr)
 }
 int is_exists(float i,float j, float arr [10][10] )
 {
-    if((arr[(int)i][(int)j]>0))
+    if(short_path(i,j,arr)!=-1)
     {
         return 1;
     }
@@ -56,6 +56,19 @@ float d(float i, float j, float k, float arr[10][10] )
 
 float short_path(float i,float j, float arr [10][10])
 {
+     // For i=j=1 test 1 returned -1 therefore I understood that if there is no self arc then there is no path, (a path back and forth to another node is not considered a path).
+    //therefore if there is a self arc we will return the value of the arc, otherwise we will return -1.
+    if(i==j && arr[(int)i][(int)j]==0) 
+    {
+        return -1;
+    }
+   
+    if(i==j && arr[(int)i][(int)j]!=0) 
+    {
+        return arr[(int)i][(int)j];
+    }
+
+
     float new_arr[10][10] ={};
     for(int x=0; x<10; x++)
     {
