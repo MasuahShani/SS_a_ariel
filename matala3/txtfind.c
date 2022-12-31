@@ -4,9 +4,11 @@
 
 int main()
 {
-    char text[LINE];
+    char text[LINE]=0;
+    memset(text,0,LINE);
     getLine(text);
-    char str[WORD];
+    char str[WORD]=0;
+    memset(str,0,WORD);
     int ind=0;
     while(text[ind]!=' ')
     {

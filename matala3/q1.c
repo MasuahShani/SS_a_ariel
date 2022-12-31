@@ -4,6 +4,10 @@
 
 int shift_element(int* arr, int i)
 {
+    if(arr==NULL)
+    {
+        return 0;
+    }
     for(int j=i; j>0; j--)
     {
        *(arr+j)=*(arr+j-1);
@@ -17,6 +21,10 @@ int shift_element(int* arr, int i)
 
 void insert_sort(int * arr, int len)
 {
+     if(arr==NULL)
+    {
+        return;
+    }
     for(int i=1;i<(len);i++)
     {
         int j=i-1;
@@ -43,7 +51,8 @@ void insert_sort(int * arr, int len)
 int main()
 {
     int len=size;
-    int arr[len];
+    int arr[len]=0;
+    memset(arr,0,len);
 
     for(int i=0; i<(len);i++)
     {

@@ -8,9 +8,9 @@
 int getWord(char w[WORD])
 {
     int i=0;
-    char c;
+    char c=0;
     scanf("%c",&c);
-    while (c!='\t'&& c!='\n'&& c!=' ' && c!='\r' && i<WORD)
+    while (c!='\t'&& c!='\n'&& c!=' ' && c!='\r' && i<WORD && c!=0)
     {
         w[i++]=c;
         scanf("%c",&c);
@@ -22,7 +22,7 @@ int getWord(char w[WORD])
 int getLine(char s[LINE])
 {
     int i=0;
-    char c;
+    char c=0;
     scanf("%c",&c);
     while (c!='\n' && c!='\r' && i<LINE)
     {
@@ -35,7 +35,8 @@ int getLine(char s[LINE])
 
 int similiar(  char * str2,char * str1, int n)
 {
-    if(strlen(str1)!=strlen(str2)-n)
+    
+    if(str1==NULL || str2==NULL || strlen(str1)!=strlen(str2)-n)
     {
         return 0;
     }
@@ -71,7 +72,10 @@ int similiar(  char * str2,char * str1, int n)
 
 int substring(char * str2, char * str1)
 {
-    
+    if(str1==NULL ||str2==NULL)
+    {
+        return 0;
+    }
     int i2=0;
     int count=0;
     if(!strcmp(str1,str2))
@@ -110,10 +114,14 @@ int substring(char * str2, char * str1)
 
 void print_lines(char * str)
 {
+    if(str==NULL)
+    {
+        return;
+    }
     int indexLine=0;
     while(indexLine<=250)
     {
-    char line[LINE];
+    char line[LINE]=0;
     memset(line,0,LINE);
     int lenL=getLine(line);
 
@@ -121,7 +129,7 @@ void print_lines(char * str)
     int i=0;
     while(indexWord<lenL)
     {
-        char word[WORD];
+        char word[WORD]=0;
         memset(word,0,WORD);
         int count=0;
         while (line[i]!=' '&& line[i]!='\t' && line[i]!='\n' && line[i]!='\r' &&line[i]!=0)// takes word from line
@@ -160,10 +168,14 @@ void print_lines(char * str)
 
 void print_similiar_word(char * str)
 {
+    if(str==NULL)
+    {
+        return;
+    }
     int indexWord=0;
     while(indexWord<250*(LINE/WORD))
     {
-        char word[WORD];
+        char word[WORD]=0;
         int lenW=getWord(word);
         if(similiar(word,str,1)|| !strcmp(word,str))
         {
