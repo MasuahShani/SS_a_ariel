@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #define size 50
 
@@ -51,7 +52,7 @@ void insert_sort(int * arr, int len)
 int main()
 {
     int len=size;
-    int arr[len]=0;
+    int arr[len];
     memset(arr,0,len);
 
     for(int i=0; i<(len);i++)

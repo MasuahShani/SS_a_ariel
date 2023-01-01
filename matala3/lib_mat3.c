@@ -8,7 +8,7 @@
 int getWord(char w[WORD])
 {
     int i=0;
-    char c=0;
+    char c=' ';
     scanf("%c",&c);
     while (c!='\t'&& c!='\n'&& c!=' ' && c!='\r' && i<WORD && c!=0)
     {
@@ -22,9 +22,9 @@ int getWord(char w[WORD])
 int getLine(char s[LINE])
 {
     int i=0;
-    char c=0;
+    char c=' ';
     scanf("%c",&c);
-    while (c!='\n' && c!='\r' && i<LINE)
+    while (c!='\n' && c!='\r' && i<LINE && c!=0)
     {
         s[i++]=c;
         scanf("%c",&c);
@@ -121,7 +121,7 @@ void print_lines(char * str)
     int indexLine=0;
     while(indexLine<=250)
     {
-    char line[LINE]=0;
+    char line[LINE];
     memset(line,0,LINE);
     int lenL=getLine(line);
 
@@ -129,7 +129,7 @@ void print_lines(char * str)
     int i=0;
     while(indexWord<lenL)
     {
-        char word[WORD]=0;
+        char word[WORD];
         memset(word,0,WORD);
         int count=0;
         while (line[i]!=' '&& line[i]!='\t' && line[i]!='\n' && line[i]!='\r' &&line[i]!=0)// takes word from line
@@ -175,7 +175,7 @@ void print_similiar_word(char * str)
     int indexWord=0;
     while(indexWord<250*(LINE/WORD))
     {
-        char word[WORD]=0;
+        char word[WORD];
         int lenW=getWord(word);
         if(similiar(word,str,1)|| !strcmp(word,str))
         {
