@@ -66,7 +66,7 @@ int main()
     {
         printf("%d,",*(index++));
     }
-    printf("%d",*(index++));
+    printf("%d\n",*(index++));
 
 
     return 0;
