@@ -179,7 +179,7 @@ void print_similiar_word(char * str)
         int lenW=getWord(word);
         if(similiar(word,str,1)|| !strcmp(word,str))
         {
-            for(int k=0;k<lenW;k++)
+            for(int k=0;k<lenW-1;k++)
             {
                 printf("%c",word[k]);
             }
